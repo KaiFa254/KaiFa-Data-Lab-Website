@@ -1,0 +1,55 @@
+# =============================================================
+# .gitignore — files Git must NEVER track
+# Each line is a pattern. Git ignores any file that matches it.
+# Why: secrets, personal data and generated files must never
+# reach GitHub, where they could leak or bloat the repository.
+# =============================================================
+
+# ---- Secrets (most important section) ----
+# real settings and API keys — never commit
+.env
+# e.g. .env.production
+.env.*
+# ...except the example, which has NO real values
+!.env.example
+*.pem
+*.key
+
+# ---- Python virtual environment and caches ----
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+.ruff_cache/
+.mypy_cache/
+
+# ---- Local databases (may contain personal data) ----
+*.db
+*.sqlite
+*.sqlite3
+data/*.db
+
+# ---- Uploaded and private files ----
+uploads/
+private_files/
+media/
+
+# ---- Logs and backups ----
+logs/
+*.log
+backups/
+*.sql.gz
+
+# ---- Editors and operating systems ----
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Node tools (if ever used) ----
+node_modules/
